@@ -12,7 +12,7 @@ machine:
 
 dependencies:
   pre:
-    - go get -u github.com/prometheus/promu
+    - make promu
     - docker info
   override:
     - promu crossbuild -p linux/amd64

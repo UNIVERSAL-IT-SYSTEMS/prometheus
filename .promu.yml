@@ -7,13 +7,13 @@ build:
           path: ./cmd/prometheus
         - name: promtool
           path: ./cmd/promtool
-    flags: -tags netgo
+    flags: -a -tags netgo
     ldflags: |
-        -X {{repoPath}}/version.Version={{.Version}}
-        -X {{repoPath}}/version.Revision={{.Revision}}
-        -X {{repoPath}}/version.Branch={{.Branch}}
-        -X {{repoPath}}/version.BuildUser={{user}}@{{host}}
-        -X {{repoPath}}/version.BuildDate={{date "20060102-15:04:05"}}
+        -X {{repoPath}}/vendor/github.com/prometheus/common/version.Version={{.Version}}
+        -X {{repoPath}}/vendor/github.com/prometheus/common/version.Revision={{.Revision}}
+        -X {{repoPath}}/vendor/github.com/prometheus/common/version.Branch={{.Branch}}
+        -X {{repoPath}}/vendor/github.com/prometheus/common/version.BuildUser={{user}}@{{host}}
+        -X {{repoPath}}/vendor/github.com/prometheus/common/version.BuildDate={{date "20060102-15:04:05"}}
 tarball:
     files:
         - consoles
@@ -21,25 +21,3 @@ tarball:
         - documentation/examples/prometheus.yml
         - LICENSE
         - NOTICE
-crossbuild:
-    platforms:
-        - linux/amd64
-        - linux/386
-        - darwin/amd64
-        - darwin/386
-        - windows/amd64
-        - windows/386
-        - freebsd/amd64
-        - freebsd/386
-        - openbsd/amd64
-        - openbsd/386
-        - netbsd/amd64
-        - netbsd/386
-        - dragonfly/amd64
-        - linux/arm
-        - linux/arm64
-        - freebsd/arm
-        - openbsd/arm
-        - netbsd/arm
-        - linux/ppc64
-        - linux/ppc64le
