@@ -1,16 +1,32 @@
+## 0.19.3 / 2016-06-14
+
+* [BUGFIX] Handle Marathon apps with zero ports
+* [BUGFIX] Fix startup panic in retrieval layer
+
+## 0.19.2 / 2016-05-29
+
+* [BUGFIX] Correctly handle `GROUP_LEFT` and `GROUP_RIGHT` without labels in
+  string representation of expressions and in rules.
+* [BUGFIX] Use `-web.external-url` for new status endpoints.
+
+## 0.19.1 / 2016-05-25
+
+* [BUGFIX] Handle service discovery panic affecting Kubernetes SD
+* [BUGFIX] Fix web UI display issue in some browsers
+
 ## 0.19.0 / 2016-05-24
 
 This version contains a breaking change to the query language. Please read
 the documentation on the grouping behavior of vector matching:
 
-	https://prometheus.io/docs/querying/operators/#vector-matching
+https://prometheus.io/docs/querying/operators/#vector-matching
 
 * [FEATURE] Add experimental Microsoft Azure service discovery
 * [FEATURE] Add `ignoring` modifier for binary operations
 * [FEATURE] Add pod discovery to Kubernetes service discovery
 * [CHANGE] Vector matching takes grouping labels from one-side
 * [ENHANCEMENT] Support time range on /api/v1/series endpoint
-* [ENHANCEMENT] Partition status page into invidual pages
+* [ENHANCEMENT] Partition status page into individual pages
 * [BUGFIX] Fix issue of hanging target scrapes
 
 ## 0.18.0 / 2016-04-18
