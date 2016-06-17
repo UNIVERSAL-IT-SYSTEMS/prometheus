@@ -109,7 +109,7 @@ func (node *AlertStmt) String() string {
 		s += fmt.Sprintf("\n\tLABELS %s", node.Labels)
 	}
 	if len(node.Annotations) > 0 {
-		s += fmt.Sprintf("\n\tANNOTATIONS %s", node.Labels)
+		s += fmt.Sprintf("\n\tANNOTATIONS %s", node.Annotations)
 	}
 	return s
 }
@@ -145,7 +145,7 @@ func (node *AggregateExpr) String() string {
 		}
 		aggrString = fmt.Sprintf(format, aggrString, node.Grouping)
 	}
-	if node.KeepExtraLabels {
+	if node.KeepCommonLabels {
 		aggrString += " KEEP_COMMON"
 	}
 	return aggrString
